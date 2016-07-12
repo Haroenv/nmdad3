@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ include(':default:nav_logged_in.html.twig') }}
+        {% else %}
+            {{ include(':default:nav_logged_out.html.twig') }}
+        {% endif %}
+    </div>
+{% endblock %}

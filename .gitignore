@@ -5,3 +5,6 @@ nbproject/
 node_modules/
 /vendor/
 /Artestead.yaml
+Vagrantfile
+after.sh
+aliases.sh

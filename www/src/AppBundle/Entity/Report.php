@@ -3,12 +3,20 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+
+
+
 
 /**
  * Report
  *
  * @ORM\Table(name="report")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ReportRepository")
+ * @Vich\Uploadable
  */
 class Report
 {
@@ -28,6 +36,11 @@ class Report
      */
     private $body;
 
+    /**
+     * @VICH\UploadableField(mapping="achievement_image", fileNameProperty="image")
+     */
+    private $imageFile;
+    
     /**
      * @var string
      *
@@ -90,6 +103,84 @@ class Report
      * @ORM\Column(name="deletedAt", type="datetime", nullable=true)
      */
     private $deletedAt;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="reports")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Status", inversedBy="reports")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
+     */
+    protected $status;
+
+
+
+    public function __construct()
+    {
+        $this->setCreatedAt(new \DateTime());
+    }
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Report
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return File
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+
+    /**
+     * Set status.
+     *
+     * @param $status
+     *
+     * @return Report
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+
+    /**
+     * Get status.
+     *
+     * @return Status
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 
 
     /**
@@ -340,6 +431,28 @@ class Report
     public function getDeletedAt()
     {
         return $this->deletedAt;
+    }
+
+    /**
+     * Set user.
+     *
+     * @param $user
+     *
+     * @return Report
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+        return $this;
+    }
+    /**
+     * Get user.
+     *
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
 

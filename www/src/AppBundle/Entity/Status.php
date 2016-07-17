@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Status
@@ -35,6 +36,20 @@ class Status
      */
     private $body;
 
+    /**
+     *
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Report", mappedBy="status")
+     */
+    private $reports;
+
+
+
+    public function __construct()
+    {
+        $this->reports = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -65,7 +80,7 @@ class Status
      *
      * @return string
      */
-    public function getName()
+    public function getTitle()
     {
         return $this->title;
     }
@@ -92,6 +107,34 @@ class Status
     public function getBody()
     {
         return $this->body;
+    }
+
+
+    /**
+     * Set reports.
+     *
+     * @param ArrayCollection $reports
+     *
+     * @return Status
+     */
+    public function setReports(ArrayCollection $reports)
+    {
+        $this->reports = $reports;
+        return $this;
+    }
+    /**
+     * Get reports.
+     *
+     * @return Report
+     */
+    public function getReports()
+    {
+        return $this->reports;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getId();
     }
 }
 

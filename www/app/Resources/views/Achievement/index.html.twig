@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Achievement list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Image</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for achievement in achievements %}
+            <tr>
+                <td><a href="{{ path('achievement_show', { 'id': achievement.id }) }}">{{ achievement.id }}</a></td>
+                <td>{{ achievement.title }}</td>
+                <td>{{ achievement.body }}</td>
+                <td>{{ achievement.image }}</td>
+                <td>{% if achievement.updatedAt %}{{ achievement.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('achievement_show', { 'id': achievement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('achievement_edit', { 'id': achievement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('achievement_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

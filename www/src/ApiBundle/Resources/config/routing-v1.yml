@@ -1,0 +1,15 @@
+#users:
+#    resource: ApiBundle\Controller\UsersController
+#    type: rest
+#
+#reports:
+#    resource: ApiBundle\Controller\ReportsController
+#    type: rest
+#
+#achievements:
+#    resource: ApiBundle\Controller\AchievementsController
+#    type: rest
+#
+#status:
+#    resource: ApiBundle\Controller\StatusController
+#    type: rest

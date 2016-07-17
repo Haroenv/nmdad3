@@ -1,0 +1,58 @@
+{{ include (':default:index.html.twig') }}
+
+{% block body %}
+    <h1>Report list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Body</th>
+                <th>Image</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>City</th>
+                <th>Postalcode</th>
+                <th>Type</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Deletedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for report in reports %}
+            <tr>
+                <td><a href="{{ path('report_show', { 'id': report.id }) }}">{{ report.id }}</a></td>
+                <td>{{ report.body }}</td>
+                <td>{{ report.image }}</td>
+                <td>{{ report.latitude }}</td>
+                <td>{{ report.longitude }}</td>
+                <td>{{ report.city }}</td>
+                <td>{{ report.postalcode }}</td>
+                <td>{{ report.type }}</td>
+                <td>{% if report.createdAt %}{{ report.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if report.updatedAt %}{{ report.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if report.deletedAt %}{{ report.deletedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('report_show', { 'id': report.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('report_edit', { 'id': report.id }) }}">edit</a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('report_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

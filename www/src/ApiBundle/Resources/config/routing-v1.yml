@@ -1,7 +1,7 @@
-#users:
-#    resource: ApiBundle\Controller\UsersController
-#    type: rest
-#
+users:
+    resource: ApiBundle\Controller\UserController
+    type: rest
+
 #reports:
 #    resource: ApiBundle\Controller\ReportsController
 #    type: rest

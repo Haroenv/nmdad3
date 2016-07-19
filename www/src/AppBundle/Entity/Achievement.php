@@ -211,7 +211,7 @@ class Achievement
      *
      * @param $user
      *
-     * @return Report
+     * @return User
      */
     public function setUsers($users)
     {

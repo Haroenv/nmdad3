@@ -1,6 +1,4 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
+{% block header %}
     <div>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             {{ include(':default:nav_logged_in.html.twig') }}

@@ -3,6 +3,7 @@
 namespace ApiBundle\Controller;
 
 use AppBundle\Entity\User;
+use AppBundle\Form\UserType;
 
 use FOS\RestBundle\Controller\Annotations as FOSRest;
 use FOS\RestBundle\Controller\FOSRestController as Controller;
@@ -88,6 +89,30 @@ class UserController extends Controller
     }
 
     /**
+     * Returns logged in user.
+     *
+     *
+     * @return mixed
+     * @FOSRest\Get(
+     *      "/user/",
+     *      requirements = {
+     *          "_format": "json|jsonp|xml"
+     *      }
+     * )
+     * @Nelmio\ApiDoc(
+     *     resource = true,
+     *     statusCodes = {
+     *         Response::HTTP_OK: "OK",
+     *     }
+     * )
+     */
+    public function getLoggedInUserAction()
+    {
+        $user = $this->getUser();
+        return $user;
+    }
+
+    /**
      * Returns all users.
      *
      * @return mixed
@@ -149,5 +174,64 @@ class UserController extends Controller
 
         $em->remove($user);
         $em->flush();
+    }
+
+    /**
+     * Post a new user.
+     *
+     * @param Request $request
+     *
+     * @return View|Response
+     *
+     * @FOSRest\View()
+     * @FOSRest\Post(
+     *     "/users/{user_id}",
+     *     name = "api_users_post"
+     * )
+     * @Nelmio\ApiDoc(
+     * input = "ApiBundle\Form\UserType",
+     *     statusCodes = {
+     *         Response::HTTP_CREATED : "Created",
+     *         Response::HTTP_BAD_REQUEST: "Please fill in all the necessary data."
+     *     }
+     * )
+     */
+    public function postUserAction(Request $request)
+    {
+        # HTTP method: POST
+        # Host/port  : http://www.trashcam.local
+        #
+        # Path       : /api/v1/users/
+        $user = new User();
+        $logger = $this->get('logger');
+        $logger->info($request);
+        return $this->processUserForm($request, $user);
+    }
+
+
+    /**
+     * Process UserType Form.
+     *
+     * @param Request $request
+     * @param User $user
+     *
+     * @return View|Response
+     */
+    private function processUserForm(Request $request, User $user)
+    {
+        $form = $this->createForm(new UserType(), $user, ['method' => $request->getMethod()]);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $statusCode = is_null($user->getId()) ? Response::HTTP_CREATED : Response::HTTP_NO_CONTENT;
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user); // Manage entity Article for persistence.
+            $em->flush();           // Persist to database.
+            $response = new Response();
+            $response->setStatusCode($statusCode);
+            return $response;
+        }
+        return View::create($form, Response::HTTP_BAD_REQUEST);
+
+
     }
 }

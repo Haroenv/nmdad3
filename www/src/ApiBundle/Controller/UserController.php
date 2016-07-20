@@ -208,6 +208,44 @@ class UserController extends Controller
         return $this->processUserForm($request, $user);
     }
 
+    /**
+     * Update a user.
+     *
+     * @param Request $request
+     *
+     * @param $user_id
+     *
+     * @return Response
+     *
+     * @FOSRest\View()
+     * @FOSRest\Put(
+     *     requirements = {
+     *         "user_id" : "\d+",
+     *         "_format" : "json|xml"
+     *     }
+     * )
+     * @Nelmio\ApiDoc(
+     *     input = "ApiBundle\Form\UserType",
+     *     statusCodes = {
+     *         Response::HTTP_NO_CONTENT: "No Content"
+     *     }
+     * )
+     */
+    public function putUserAction(Request $request, $user_id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em
+            ->getRepository('AppBundle:User')
+            ->find($user_id);
+
+        if (!$user instanceof User) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->processUserForm($request, $user);
+    }
+
 
     /**
      * Process UserType Form.

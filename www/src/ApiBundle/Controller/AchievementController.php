@@ -5,6 +5,7 @@ namespace ApiBundle\Controller;
 use AppBundle\Entity\Achievement;
 
 use ApiBundle\Form\AchievementType as AchievementType;
+use ApiBundle\Form\AchievementEditType as AchievementEditType;
 
 use FOS\RestBundle\Controller\Annotations as FOSRest;
 use FOS\RestBundle\Controller\FOSRestController as Controller;
@@ -163,7 +164,7 @@ class AchievementController extends Controller
      *
      * @FOSRest\View()
      * @FOSRest\Post(
-     *     "/achievements/{achievement_id}",
+     *     "/achievements/",
      *     name = "api_achievements_post"
      * )
      * @Nelmio\ApiDoc(
@@ -174,7 +175,7 @@ class AchievementController extends Controller
      *     }
      * )
      */
-    public function postUserAction(Request $request)
+    public function postAchievementAction(Request $request)
     {
         # HTTP method: POST
         # Host/port  : http://www.trashcam.local
@@ -196,7 +197,8 @@ class AchievementController extends Controller
      * @return Response
      *
      * @FOSRest\View()
-     * @FOSRest\Put(
+     * @FOSRest\Post(
+     *     "/achievements/{achievement_id}",
      *     requirements = {
      *         "achievement_id" : "\d+",
      *         "_format" : "json|xml"

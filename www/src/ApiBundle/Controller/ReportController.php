@@ -161,7 +161,7 @@ class ReportController extends Controller
      *
      * @FOSRest\View()
      * @FOSRest\Post(
-     *     "/reports/{report_id}",
+     *     "/reports/",
      *     name = "api_reports_post"
      * )
      * @Nelmio\ApiDoc(
@@ -194,7 +194,8 @@ class ReportController extends Controller
      * @return Response
      *
      * @FOSRest\View()
-     * @FOSRest\Put(
+     * @FOSRest\Post(
+     *     "/reports/{report_id}",
      *     requirements = {
      *         "report_id" : "\d+",
      *         "_format" : "json|xml"

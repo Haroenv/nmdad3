@@ -16,3 +16,5 @@ Vagrantfile
 after.sh
 aliases.sh
 web/images
+web/css
+node_modules

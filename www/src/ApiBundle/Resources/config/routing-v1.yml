@@ -6,10 +6,10 @@ users:
 #    resource: ApiBundle\Controller\ReportsController
 #    type: rest
 #
-#achievements:
-#    resource: ApiBundle\Controller\AchievementsController
-#    type: rest
-#
+achievements:
+    resource: ApiBundle\Controller\AchievementController
+    type: rest
+
 #status:
 #    resource: ApiBundle\Controller\StatusController
 #    type: rest

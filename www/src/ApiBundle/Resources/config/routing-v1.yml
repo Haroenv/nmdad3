@@ -10,6 +10,6 @@ achievements:
     resource: ApiBundle\Controller\AchievementController
     type: rest
 
-#status:
-#    resource: ApiBundle\Controller\StatusController
-#    type: rest
+status:
+    resource: ApiBundle\Controller\StatusController
+    type: rest

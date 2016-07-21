@@ -3,7 +3,7 @@
 namespace ApiBundle\Controller;
 
 use AppBundle\Entity\User;
-use AppBundle\Form\UserType;
+use ApiBundle\Form\UserType as UserType;
 
 use FOS\RestBundle\Controller\Annotations as FOSRest;
 use FOS\RestBundle\Controller\FOSRestController as Controller;

@@ -1,0 +1,6 @@
+# gulp-ng-annotate
+# @link https://www.npmjs.com/package/gulp-ng-annotate
+# @link https://github.com/olov/ng-annotate
+ngAnnotate:
+  add          : true
+  single_quotes: true

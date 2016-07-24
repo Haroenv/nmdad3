@@ -22,23 +22,23 @@
 
         vm.links = [
             {
-                'href' : '/blog',
-                'label': 'Blog Demo',
+                'href' : '/camera',
+                'label': 'Camera',
                 'color': '#1DB8D1'
             },
             {
-                'href' : '/camera',
-                'label': 'Camera Demo',
+                'href' : '/leaderboard',
+                'label': 'Leaderboard',
                 'color': '#F49719'
             },
             {
-                'href' : '/database',
-                'label': 'Database Demo',
+                'href' : '/achievements',
+                'label': 'Achievements',
                 'color': '#1DB8D1'
             },
             {
-                'href' : '/camera',
-                'label': 'Camera Demo',
+                'href' : '/profile',
+                'label': 'Profile',
                 'color': '#F49719'
             }
         ];

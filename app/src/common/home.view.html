@@ -1,0 +1,9 @@
+<ion-view title="{{ vm.title }}">
+    <ion-content>
+        <div class="home--wrapper">
+            <div ng-repeat="link in vm.links" class="home--button" style="background-color: {{ link.color }}">
+                <a href="#{{ link.href }}">{{ link.label }}</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

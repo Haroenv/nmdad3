@@ -15,6 +15,7 @@
         'app.general',
         'app.common',
         'app.camera',
+        'app.leaderboard',
         'app.services'
     ]);
 

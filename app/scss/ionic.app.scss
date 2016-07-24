@@ -23,26 +23,3 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-
-
-.home--wrapper {
-  height: 100vh;
-}
-
-.home--button {
-  height:25%;
-  width:100%;
-  max-width:100%;
-  padding:0 auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  a {
-    text-decoration: none;
-    color:$light;
-    font-size:18px;
-  }
-
-}

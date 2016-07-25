@@ -20,29 +20,59 @@
         var vm = this;
         vm.title = 'Achievements';
 
+        function chunk(arr, size) {
+            var newArr = [];
+            for (var i=0; i<arr.length; i+=size) {
+                newArr.push(arr.slice(i, i+size));
+            }
+            return newArr;
+        }
 
         vm.achievements = [
             {
                 'image': 'http://placehold.it/125x125',
-                'label': 'Spotter',
+                'title': 'Spotter',
                 'body': 'hey, you spotted so much, cool!'
             },
             {
                 'image': 'http://placehold.it/125x125',
-                'label': 'Cool badge',
+                'title': 'Cool badge',
                 'body': 'hey, you spotted so much, cool!'
             },
             {
                 'image': 'http://placehold.it/125x125',
-                'label': 'noice badge 3',
+                'title': 'noice badge',
                 'body': 'hey, you spotted so much, cool!' 
             },
             {
                 'image': 'http://placehold.it/125x125',
-                'label': 'Aha badge',
+                'title': 'Aha badge',
+                'body': 'hey, you spotted so much, cool!'
+            },
+            {
+                'image': 'http://placehold.it/125x125',
+                'title': 'Cool badge',
+                'body': 'hey, you spotted so much, cool!'
+            },
+            {
+                'image': 'http://placehold.it/125x125',
+                'title': 'noice badge',
+                'body': 'hey, you spotted so much, cool!'
+            },
+            {
+                'image': 'http://placehold.it/125x125',
+                'title': 'Spotter',
+                'body': 'hey, you spotted so much, cool!'
+            },
+            {
+                'image': 'http://placehold.it/125x125',
+                'title': 'Cool badge',
                 'body': 'hey, you spotted so much, cool!'
             }
         ];
+
+        vm.data = chunk(vm.achievements, 2);
+
 
     }
 

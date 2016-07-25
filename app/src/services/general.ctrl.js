@@ -29,7 +29,7 @@
                 'icon': 'ion-ios-people'
             },
             {
-                'href' : '/achievements',
+                'href' : '/achievement',
                 'label': 'Achievements',
                 'icon': 'ion-ribbon-b'
             },

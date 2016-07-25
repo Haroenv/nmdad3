@@ -32,7 +32,7 @@
                 'color': '#F49719'
             },
             {
-                'href' : '/achievements',
+                'href' : '/achievement',
                 'label': 'Achievements',
                 'color': '#1DB8D1'
             },

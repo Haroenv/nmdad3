@@ -16,6 +16,7 @@
         'app.common',
         'app.camera',
         'app.leaderboard',
+        'app.achievement',
         'app.services'
     ]);
 

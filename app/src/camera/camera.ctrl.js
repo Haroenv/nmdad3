@@ -23,7 +23,6 @@
         vm.getPhoto = getPhoto;
         vm.lastPhoto = null;
         vm.title = 'Camera Demo';
-        vm.navbottom = true;
 
         // Functions
         // =========

@@ -14,7 +14,6 @@
         // Modules
         'app.general',
         'app.common',
-        'app.camera',
         'app.leaderboard',
         'app.achievement',
         'app.profile',

@@ -20,26 +20,38 @@
 
         vm.title = 'Home';
 
-        vm.links = [
+        vm.reports = [
             {
-                'href' : '/camera',
-                'label': 'Camera',
-                'color': '#1DB8D1'
+                'name' : 'Wesley',
+                'location': 'coolstraat 1',
+                'city': 'Ghent',
+                'image': 'http://placehold.it/500x500',
+                'description': 'lorem ipsum doler matum',
+                'time': '22 minutes ago'
             },
             {
-                'href' : '/leaderboard',
-                'label': 'Leaderboard',
-                'color': '#F49719'
+                'name' : 'Wesley',
+                'location': 'coolstraat 1',
+                'city': 'Diksmuide',
+                'image': 'http://placehold.it/500x500',
+                'description': 'lorem ipsum doler matum',
+                'time': '22 minutes ago'
             },
             {
-                'href' : '/achievement',
-                'label': 'Achievements',
-                'color': '#1DB8D1'
+                'name' : 'Wesley',
+                'location': 'coolstraat 1',
+                'city': 'Lichtervelde',
+                'image': 'http://placehold.it/500x500',
+                'description': 'lorem ipsum doler matum',
+                'time': '22 minutes ago'
             },
             {
-                'href' : '/profile',
-                'label': 'Profile',
-                'color': '#F49719'
+                'name' : 'Wesley',
+                'location': 'coolstraat 1',
+                'city': 'Cooltown',
+                'image': 'http://placehold.it/500x500',
+                'description': 'lorem ipsum doler matum',
+                'time': '22 minutes ago'
             }
         ];
     }

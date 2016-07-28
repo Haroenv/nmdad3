@@ -24,13 +24,16 @@
 
 // 5. Components
 @import
-  'components/button';
+  'components/button',
+  'components/image',
+  'components/tabs';
 
 // 6. Page-specific styles
 @import
   'pages/home',
   'pages/leaderboard',
-  'pages/achievement';
+  'pages/achievement',
+  'pages/profile';
 
 // 7. Themes
 @import

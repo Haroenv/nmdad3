@@ -1,5 +1,5 @@
-.leaderboard--wrapper {
+.profile--wrapper {
   @extend .wrapper;
-  font-size: 18px;
+  padding-left:$report-padding;
   font-family: $title-font-stack;
 }

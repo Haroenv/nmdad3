@@ -1,0 +1,20 @@
+<ion-header-bar align-title="center" class="bar-black">
+    <h1 class="title"> <span class="icon ion-ios-trash-outline"></span> Trashcam</h1>
+</ion-header-bar>
+<ion-view title="{{ vm.title }}">
+    <ion-content>
+        <div class="profile--wrapper">
+            <h1>{{ vm.title }}</h1>
+            <p>first name: {{ vm.profile.firstName }}</p>
+            <p>last name: {{ vm.profile.lastName }}</p>
+            <p>email: {{ vm.profile.email }}</p>
+            <p>score: {{ vm.profile.score }}</p>
+        </div>
+    </ion-content>
+    <div class="tabs tabs-icon-top" ng-controller="GeneralCtrl as general">
+        <a class="tab-item" ng-repeat="item in general.menu" href="{{ item.href }}" ng-click="{{ item.function }}">
+            <i class="icon {{ item.icon }}"></i>
+            {{ item.label }}
+        </a>
+    </div>
+</ion-view>

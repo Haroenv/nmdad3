@@ -17,6 +17,7 @@
         'app.camera',
         'app.leaderboard',
         'app.achievement',
+        'app.profile',
         'app.services'
     ]);
 

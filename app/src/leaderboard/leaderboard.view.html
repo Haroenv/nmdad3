@@ -1,0 +1,21 @@
+<ion-header-bar align-title="center" class="bar-black">
+    <h1 class="title"><span class="icon ion-ios-trash-outline"> </span>Trashcam</h1>
+</ion-header-bar>
+<ion-view title="{{ vm.title }}">
+    <ion-content class="leaderboard--wrapper padding">
+        <div ng-repeat="score in vm.scores" class="row">
+            <div class="col col-10"> {{$index + 1}} </div>
+            <div class="col col-67"> {{ score.name }} </div>
+            <div ng-if="$first" class="col "> {{ score.score }} </div>
+            <div ng-if="$first" class="col "><img src="http://www.psthc.fr/images/smilies/trophy_gold.png" alt="c"> </div>
+            <div ng-if="!$first" class="col "> {{ score.score }} </div>
+
+        </div>
+    </ion-content>
+    <div class="tabs tabs-icon-top" ng-controller="GeneralCtrl as general">
+        <a class="tab-item" ng-repeat="item in general.menu" href="{{ item.href }}" ng-click=" {{ item.function }}">
+            <i class="icon {{ item.icon }}"></i>
+            {{ item.label }}
+        </a>
+    </div>
+</ion-view>

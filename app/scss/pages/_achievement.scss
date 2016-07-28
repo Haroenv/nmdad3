@@ -1,6 +1,10 @@
 .achievement--wrapper {
   @extend .wrapper;
-  background-color: #1DB8D1;
   text-align: center;
   padding:10px 10px 50px 10px;
+
+
+  .achievement--image {
+    border-radius: 50%;
+  }
 }

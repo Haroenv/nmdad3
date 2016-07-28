@@ -30,44 +30,37 @@
 
         vm.achievements = [
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'Spotter',
-                'body': 'hey, you spotted so much, cool!'
+                'image': 'http://placehold.it/75x75',
+                'title': 'Spotter'
             },
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'Cool badge',
-                'body': 'hey, you spotted so much, cool!'
+                'image': 'http://placehold.it/75x75',
+                'title': 'Cool badge'
             },
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'noice badge',
-                'body': 'hey, you spotted so much, cool!' 
+                'image': 'http://placehold.it/75x75',
+                'title': 'noice badge'
+
             },
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'Aha badge',
-                'body': 'hey, you spotted so much, cool!'
+                'image': 'http://placehold.it/75x75',
+                'title': 'Aha badge'
             },
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'Cool badge',
-                'body': 'hey, you spotted so much, cool!'
+                'image': 'http://placehold.it/75x75',
+                'title': 'Cool badge'
             },
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'noice badge',
-                'body': 'hey, you spotted so much, cool!'
+                'image': 'http://placehold.it/75x75',
+                'title': 'noice badge'
             },
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'Spotter',
-                'body': 'hey, you spotted so much, cool!'
+                'image': 'http://placehold.it/75x75',
+                'title': 'Spotter'
             },
             {
-                'image': 'http://placehold.it/125x125',
-                'title': 'Cool badge',
-                'body': 'hey, you spotted so much, cool!'
+                'image': 'http://placehold.it/75x75',
+                'title': 'Cool badge'
             }
         ];
 

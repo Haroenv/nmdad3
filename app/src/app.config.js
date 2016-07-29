@@ -16,6 +16,7 @@
         $httpProvider,
         $urlRouterProvider,
         $ionicConfigProvider
+
     ) {
         // Allow 'app:' as protocol (for use in Hybrid Mobile apps)
         $compileProvider
@@ -24,8 +25,8 @@
         ;
 
         // Basic Auth
-        var username = 'nmdad3_gebruiker',
-            password = 'nmdad3_wachtwoord',
+        var username = 'admin',
+            password = 'test',
             credentials = window.btoa(username + ':' + password);
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + credentials;
 
@@ -35,17 +36,6 @@
         //
         $ionicConfigProvider.tabs.position('bottom');
 
-
-
-        // if (this.navbottom === true ) {
-        //     this.nav =
-        //         "<div class='tabs tabs-icon-top' ng-controller='GeneralCtrl as general'>" +
-        //         "<a class='tab-item' ng-repeat='item in general.menu' href='#{{ item.href }}'>" +
-        //         "<i class='icon {{ item.icon }}'></i>" +
-        //         "{{ item.label }}" +
-        //         "</a>" +
-        //         "</div>" ;
-        // }
     }
 
 })();

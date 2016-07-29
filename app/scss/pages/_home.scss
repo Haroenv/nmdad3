@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.home--wrapper {
+  margin-bottom:80px;
+}
+
+
+
+
+/*=========================
+ Styling section Report
+==========================*/
+
+.report {
+  padding-top:5vh;
+  height:80vh;
+
+
+  .report--name {
+    padding-left: $report-padding;
+    margin:10px 0 0 0;
+    font-family:$title-font-stack;
+  }
+
+  .report--link {
+    padding-left: $report-padding;
+
+  }
+
+  .report--image {
+    margin-top:10px;
+  }
+
+  .report--description {
+    margin-bottom:3px;
+    padding-left: $report-padding;
+    font-family: $text-font-stack;
+    font-size:14px;
+  }
+
+  .report--time {
+    padding-left: $report-padding;
+    font-size:11px;
+  }
+}
+

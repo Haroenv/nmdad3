@@ -1,0 +1,5 @@
+.profile--wrapper {
+  @extend .wrapper;
+  padding-left:$report-padding;
+  font-family: $title-font-stack;
+}

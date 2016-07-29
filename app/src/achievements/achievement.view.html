@@ -1,0 +1,20 @@
+<ion-header-bar align-title="center" class="bar-black">
+    <h1 class="title"> <span class="icon ion-ios-trash-outline"></span> Trashcam </h1>
+</ion-header-bar>
+<ion-view title="{{ vm.title }}">
+    <ion-content class="achievement--wrapper">
+        <div class="row">
+            <div ng-repeat="achievement in vm.achievements" class="col col-50">
+                <h5>{{ achievement.title }}</h5>
+                <img ng-src="http://trashcam.local/images/achievements/{{achievement.image}}" alt="Achievement Image" class="achievement--image">
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="tabs tabs-icon-top" ng-controller="GeneralCtrl as general">
+        <a class="tab-item" ng-repeat="item in general.menu" href="{{ item.href }}" ng-click=" {{ item.function }}">
+            <i class="icon {{ item.icon }}"></i>
+            {{ item.label }}
+        </a>
+    </div>
+</ion-view>

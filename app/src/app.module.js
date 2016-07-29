@@ -13,6 +13,8 @@
         'ngResource',
         // Modules
         'app.general',
+        'app.login',
+        'app.register',
         'app.common',
         'app.leaderboard',
         'app.achievement',

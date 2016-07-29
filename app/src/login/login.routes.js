@@ -6,7 +6,7 @@
 ;(function () {
     'use strict';
 
-    angular.module('app.profile')
+    angular.module('app.login')
         .config(Routes);
 
     /* @ngInject */
@@ -15,10 +15,10 @@
         $stateProvider
     ) {
         $stateProvider
-            .state('profile', {
-                controller: 'ProfileCtrl as vm',
-                templateUrl: 'templates/profile/profile.view.html',
-                url: '/profile'
+            .state('login', {
+                controller: 'LoginCtrl as vm',
+                templateUrl: 'templates/login/login.view.html',
+                url: '/login'
             });
     }
 

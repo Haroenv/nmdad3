@@ -6,7 +6,7 @@
 ;(function () {
     'use strict';
 
-    angular.module('app.camera')
+    angular.module('app.achievement')
         .config(Routes);
 
     /* @ngInject */

@@ -3,10 +3,10 @@
 </ion-header-bar>
 <ion-view title="{{ vm.title }}">
     <ion-content class="achievement--wrapper">
-        <div class="row" ng-repeat="rows in vm.data">
-            <div ng-repeat="item in rows" class="col col-50">
-                <h5>{{ item.title }}</h5>
-                <img src='{{ item.image }}' alt="Achievement Image" class="achievement--image">
+        <div class="row">
+            <div ng-repeat="achievement in vm.achievements" class="col col-50">
+                <h5>{{ achievement.title }}</h5>
+                <img ng-src="http://trashcam.local/images/achievements/{{achievement.image}}" alt="Achievement Image" class="achievement--image">
             </div>
         </div>
     </ion-content>

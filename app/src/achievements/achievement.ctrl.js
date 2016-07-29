@@ -12,13 +12,18 @@
     /* @ngInject */
     function AchievementCtrl(
         // Angular
-        $log
+        $log,
+        //custom
+        AchievementResourceFactory
+
     ) {
         // ViewModel
         // =========
 
         var vm = this;
         vm.title = 'Achievements';
+        vm.loading = true;
+        vm.achievements = getAchievements();
 
         function chunk(arr, size) {
             var newArr = [];
@@ -28,45 +33,24 @@
             return newArr;
         }
 
-        vm.achievements = [
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'Spotter'
-            },
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'Cool badge'
-            },
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'noice badge'
+        function getAchievements() {
+            return AchievementResourceFactory
+                .query(
+                    success,
+                    error
+                );
 
-            },
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'Aha badge'
-            },
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'Cool badge'
-            },
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'noice badge'
-            },
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'Spotter'
-            },
-            {
-                'image': 'http://placehold.it/75x75',
-                'title': 'Cool badge'
+            function error(error) {
+                $log.error('getArticles Error:', error);
             }
-        ];
 
+            function success(resource, responseHeader) {
+                $log.log('getArticles Success:', resource, responseHeader());
+                vm.loading = false;
+            }
+        }
+        
         vm.data = chunk(vm.achievements, 2);
-
-
     }
 
 })();

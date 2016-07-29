@@ -47,7 +47,7 @@ class AchievementController extends Controller
         # HTTP method: OPTIONS
         # Host/port  : http://www.trashcam.local
         #
-        # Path       : /api/v1/achievements/
+        # Path       : /api/v1/achievements
 
         $response = new Response();
         $response->headers->set('Allow', 'OPTIONS, GET, POST, PUT');
@@ -60,7 +60,7 @@ class AchievementController extends Controller
      *
      * @return mixed
      * @FOSRest\Get(
-     *     "/achievements/",
+     *     "/achievements",
      *     requirements = {
      *          "_format": "json|jsonp|xml"
      *     }
@@ -164,7 +164,7 @@ class AchievementController extends Controller
      *
      * @FOSRest\View()
      * @FOSRest\Post(
-     *     "/achievements/",
+     *     "/achievements",
      *     name = "api_achievements_post"
      * )
      * @Nelmio\ApiDoc(
@@ -180,7 +180,7 @@ class AchievementController extends Controller
         # HTTP method: POST
         # Host/port  : http://www.trashcam.local
         #
-        # Path       : /api/v1/achievements/
+        # Path       : /api/v1/achievements
         $user = new Achievement();
         $logger = $this->get('logger');
         $logger->info($request);

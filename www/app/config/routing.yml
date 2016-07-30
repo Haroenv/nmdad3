@@ -1,3 +1,11 @@
+api:
+    resource: "@ApiBundle/Resources/config/routing.yml"
+    type:     rest
+    prefix:   /api
+
+api_login_check:
+    path: /api/login_check
+
 app_status:
     resource: "@AppBundle/Controller/StatusController.php"
     type:     annotation
@@ -5,11 +13,6 @@ app_status:
 app_user:
     resource: "@AppBundle/Controller/UserController.php"
     type:     annotation
-
-api:
-    resource: "@ApiBundle/Resources/config/routing.yml"
-    type:     rest
-    prefix:   /api
 
 app:
     resource: "@AppBundle/Controller/"
@@ -21,3 +24,4 @@ fos_user:
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+

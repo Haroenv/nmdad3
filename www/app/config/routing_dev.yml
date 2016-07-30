@@ -13,3 +13,5 @@ _errors:
 _main:
     resource: routing.yml
 
+api_login_check:
+   path: /api/login_check

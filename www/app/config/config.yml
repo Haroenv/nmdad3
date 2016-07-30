@@ -66,6 +66,12 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+lexik_jwt_authentication:
+    private_key_path: %jwt_private_key_path%
+    public_key_path:  %jwt_public_key_path%
+    pass_phrase:      %jwt_key_pass_phrase%
+    token_ttl:        %jwt_token_ttl%
+
 
 # FOSRestBundle
 fos_rest:
@@ -91,7 +97,6 @@ fos_rest:
             "Doctrine\ORM\OptimisticLockException": HTTP_CONFLICT
     routing_loader:
         default_format: json
-
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
@@ -133,15 +138,15 @@ nelmio_api_doc:
 
 # Nelmio CorsBundle
 nelmio_cors:
-        paths:
-            '^/api/':
-                allow_origin: ['*']
-                allow_headers: ['X-Custom-Auth', "Authorization", "Content-Type"]
-                allow_methods: ['OPTIONS','POST', 'PUT', 'GET', 'DELETE']
-                max_age: 3600
-            '^/':
-                allow_origin: ['*']
-                allow_headers: ['X-Custom-Auth', "Authorization", "Content-Type"]
-                allow_methods: ['OPTIONS','POST', 'PUT', 'GET', 'DELETE']
-                max_age: 3600
-                hosts: ['^api\.']
+    paths:
+        '^/api/':
+            allow_origin: ['*']
+            allow_headers: ['X-Custom-Auth', "Authorization", "Content-Type"]
+            allow_methods: ['OPTIONS','POST', 'PUT', 'GET', 'DELETE']
+            max_age: 3600
+        '^/':
+            allow_origin: ['*']
+            allow_headers: ['X-Custom-Auth', "Authorization", "Content-Type"]
+            allow_methods: ['OPTIONS','POST', 'PUT', 'GET', 'DELETE']
+            max_age: 3600
+            hosts: ['^api\.']

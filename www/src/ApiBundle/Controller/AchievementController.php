@@ -33,7 +33,7 @@ class AchievementController extends Controller
      *
      * @return Response
      *
-     * @FOSRest\Options("/achievements/")
+     * @FOSRest\Options("/achievements")
      *
      * @Nelmio\ApiDoc(
      *     resource = true,
